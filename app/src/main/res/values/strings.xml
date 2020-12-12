@@ -21,4 +21,9 @@
     <string name="detailCredit">Credit</string>
     <string name="imgProduct">Product Image</string>
     <string name="imgBlock">Block Img</string>
+    <string name="titDesc1">Descripción</string>
+    <string name="titDesc2">Precio Oferta:</string>
+    <string name="emailTxt">Contactar área de ventas</string>
+
+
 </resources>

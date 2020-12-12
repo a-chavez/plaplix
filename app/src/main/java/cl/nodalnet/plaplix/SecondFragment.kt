@@ -1,5 +1,7 @@
 package cl.nodalnet.plaplix
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -24,6 +26,7 @@ class SecondFragment : Fragment() {
 
     lateinit var mViewModel: MyViewModel
     var mId: Int = 1
+    var mProduct = "Producto"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +48,7 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
       mViewModel.getOneGoods(mId).observe(viewLifecycleOwner, {
+          mProduct=it.name
           tvSecName.setText(it.name)
           tvSecDescr.setText(it.description)
           tvSecPrice.setText(it.price.toString())
@@ -55,8 +59,21 @@ class SecondFragment : Fragment() {
               .load(it.image)
               .transform(CenterCrop(), RoundedCorners(20))
               .into(imgsecDetails)
-      })
 
+          Glide.with(this)
+              .load(it.image)
+              .transform(CenterCrop(), RoundedCorners(10))
+              .into(imgsecDetails2)
+
+      })
+    imgEmail.setOnClickListener{
+        startActivity(
+            Intent(
+                Intent.ACTION_SENDTO,
+                Uri.parse("mailto:antonio@nodalnet.cl?subject= Cotizar "+mProduct)
+            )
+        )
+    }
 
     }
 }

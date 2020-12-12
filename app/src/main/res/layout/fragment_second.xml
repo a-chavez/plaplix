@@ -1,80 +1,196 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".SecondFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgSecBox"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/box"
-        android:contentDescription="@string/imgBlock"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <ImageView
+            android:id="@+id/imgSecBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/box"
+            android:contentDescription="@string/imgBlock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imgsecDetails"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/imgProduct"
-        app:layout_constraintTop_toTopOf="@+id/imgSecBox"
-        tools:src="@tools:sample/avatars" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/block"
+            app:layout_constraintEnd_toEndOf="@+id/imgSecBox"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imgSecBox"
+            app:layout_constraintTop_toBottomOf="@+id/tvSecDescr" />
 
-    <TextView
-        android:id="@+id/tvSecName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/detailName"
-        app:layout_constraintStart_toStartOf="@+id/imgSecBox"
-        app:layout_constraintTop_toBottomOf="@+id/imgsecDetails" />
+        <ImageView
+            android:id="@+id/imgsecDetails"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/imgProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgSecBox"
+            tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tvSecDescr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/detailDesc"
-        app:layout_constraintStart_toStartOf="@+id/tvSecName"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecName" />
+        <ImageView
+            android:id="@+id/imgsecDetails2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="@string/imgProduct"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imgsecDetails"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tvSecPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/priceNow"
-        app:layout_constraintStart_toStartOf="@+id/tvSecName"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecDescr" />
+        <TextView
+            android:id="@+id/tvSecName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/detailName"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imgsecDetails"
+            app:layout_constraintStart_toStartOf="@+id/imgsecDetails"
+            app:layout_constraintTop_toTopOf="@+id/imgSecBox" />
 
-    <TextView
-        android:id="@+id/tvSecLastPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/priceLast"
-        app:layout_constraintStart_toStartOf="@+id/tvSecName"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecPrice" />
+        <TextView
+            android:id="@+id/tvSecDescr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/detailDesc"
+            app:layout_constraintStart_toStartOf="@+id/txtDescrip"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescrip" />
 
-    <TextView
-        android:id="@+id/tvSecCredit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/detailCredit"
-        app:layout_constraintStart_toStartOf="@+id/tvSecName"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecLastPrice" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvSecPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priceNow"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtPriceNow"
+            app:layout_constraintStart_toEndOf="@+id/txtPrice" />
+
+        <TextView
+            android:id="@+id/tvSecLastPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priceLast"
+            android:textAlignment="viewStart"
+            android:textIsSelectable="false"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvSecPrice"
+            app:layout_constraintStart_toEndOf="@+id/txtPrice" />
+
+        <TextView
+            android:id="@+id/tvSecCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/detailCredit"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCreditCard"
+            app:layout_constraintStart_toEndOf="@+id/imgCreditCard"
+            app:layout_constraintTop_toTopOf="@+id/imgCreditCard" />
+
+        <TextView
+            android:id="@+id/txtDescrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/titDesc1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imgSecBox"
+            app:layout_constraintTop_toBottomOf="@+id/imgsecDetails" />
+
+        <TextView
+            android:id="@+id/txtDescrip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/emailTxt"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imgSecBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/titDesc2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvSecDescr"
+            app:layout_constraintTop_toTopOf="@+id/imgsecDetails2" />
+
+        <TextView
+            android:id="@+id/txtPriceLast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Price (CL):"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtPriceNow"
+            app:layout_constraintStart_toStartOf="@+id/txtPriceNow" />
+
+        <TextView
+            android:id="@+id/txtPriceNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Now (CL):"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgsecDetails2"
+            app:layout_constraintStart_toStartOf="@+id/txtPrice" />
+
+        <ImageView
+            android:id="@+id/imgEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@android:drawable/ic_dialog_email"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDescrip3"
+            app:layout_constraintStart_toEndOf="@+id/txtDescrip3"
+            app:layout_constraintTop_toTopOf="@+id/txtDescrip3"
+            app:layout_constraintVertical_bias=".5" />
+
+        <ImageView
+            android:id="@+id/imgCreditCard"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_card_logo"
+            android:tint="@color/colorTextIcons"
+            app:layout_constraintStart_toStartOf="@+id/txtPrice"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
