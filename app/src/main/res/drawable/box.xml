@@ -6,7 +6,7 @@
         android:color="@color/colorDivider"
         />
     <solid
-        android:color="@color/colorPrimaryLight"
+        android:color="@color/colorPrimary"
         />
 
 </shape>

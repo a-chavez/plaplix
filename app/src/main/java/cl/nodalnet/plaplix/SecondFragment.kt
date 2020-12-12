@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import cl.nodalnet.plaplix.room.DetailsItem
 import cl.nodalnet.plaplix.viewmodel.MyAdapter
 import cl.nodalnet.plaplix.viewmodel.MyViewModel
 import com.bumptech.glide.Glide
@@ -53,7 +55,10 @@ class SecondFragment : Fragment() {
           tvSecDescr.setText(it.description)
           tvSecPrice.setText(it.price.toString())
           tvSecLastPrice.setText(it.lastPrice.toString())
-          tvSecCredit.setText(it.credit.toString())
+            when (it.credit.toString()){
+                "true"-> tvSecCredit.setText("Acepta Crédito")
+                else -> tvSecCredit.setText("Sólo Efectivo")
+            }
 
           Glide.with(this)
               .load(it.image)
@@ -66,14 +71,28 @@ class SecondFragment : Fragment() {
               .into(imgsecDetails2)
 
       })
-    imgEmail.setOnClickListener{
+
+        txtDescrip3.setOnClickListener {
+            sendEmail()
+        }
+
+        imgEmail.setOnClickListener{
+            sendEmail()
+    }
+
+    }
+
+    fun sendEmail() {
         startActivity(
             Intent(
                 Intent.ACTION_SENDTO,
-                Uri.parse("mailto:antonio@nodalnet.cl?subject= Cotizar "+mProduct)
+                Uri.parse("mailto:info@novaera.cl?subject= Consulta "+mProduct+" id "+mId
+                        + "&body=" + Uri.encode(
+                    "Hola:\n\n" + "Vi el producto: "+mProduct+" de código: "+mId+
+                            " y me gustaría que me contactaran a este correo "+
+                            "o al siguiente número: _________ \n\n"+ "Quedo atento."
+                ))
             )
         )
-    }
-
     }
 }

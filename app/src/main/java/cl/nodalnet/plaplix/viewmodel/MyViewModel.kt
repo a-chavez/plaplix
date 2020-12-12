@@ -27,6 +27,4 @@ class MyViewModel(application: Application):AndroidViewModel(application) {
     fun getOneGoods(mID :Int):LiveData<DetailsItem>{
         return mMyRepository.getOneGoods(mID)
     }
-
-
 }

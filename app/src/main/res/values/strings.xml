@@ -24,6 +24,7 @@
     <string name="titDesc1">Descripción</string>
     <string name="titDesc2">Precio Oferta:</string>
     <string name="emailTxt">Contactar área de ventas</string>
-
+    <string name="creditCard">Acepta Crédito</string>
+    <string name="cash">Sólo Efectivo</string>
 
 </resources>
