@@ -9,4 +9,16 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="priceTxt">Price (CL) :</string>
+    <string name="price">price</string>
+    <string name="skuTxt">SKU :</string>
+    <string name="productName">Product Name</string>
+    <string name="sku">00</string>
+    <string name="detailName">product</string>
+    <string name="detailDesc">Description</string>
+    <string name="priceNow">price now</string>
+    <string name="priceLast">price last</string>
+    <string name="detailCredit">Credit</string>
+    <string name="imgProduct">Product Image</string>
+    <string name="imgBlock">Block Img</string>
 </resources>

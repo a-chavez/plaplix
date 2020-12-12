@@ -6,22 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/previous"
+    <ImageView
+        android:id="@+id/imgSecBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/box"
+        android:contentDescription="@string/imgBlock"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgsecDetails"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/imgProduct"
+        app:layout_constraintTop_toTopOf="@+id/imgSecBox"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvSecName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/detailName"
+        app:layout_constraintStart_toStartOf="@+id/imgSecBox"
+        app:layout_constraintTop_toBottomOf="@+id/imgsecDetails" />
+
+    <TextView
+        android:id="@+id/tvSecDescr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/detailDesc"
+        app:layout_constraintStart_toStartOf="@+id/tvSecName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecName" />
+
+    <TextView
+        android:id="@+id/tvSecPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/priceNow"
+        app:layout_constraintStart_toStartOf="@+id/tvSecName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecDescr" />
+
+    <TextView
+        android:id="@+id/tvSecLastPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/priceLast"
+        app:layout_constraintStart_toStartOf="@+id/tvSecName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecPrice" />
+
+    <TextView
+        android:id="@+id/tvSecCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/detailCredit"
+        app:layout_constraintStart_toStartOf="@+id/tvSecName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecLastPrice" />
 </androidx.constraintlayout.widget.ConstraintLayout>
